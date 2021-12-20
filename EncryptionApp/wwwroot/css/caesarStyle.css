@@ -1,0 +1,165 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color: #1e90ff;
+}
+
+.container .c1 {
+    width: 80%;
+}
+h2 {
+    font-size: 4em;
+    font-weight: 500;
+}
+
+/*swich checkbox styles*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #007bff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+/*form styles and animation*/
+
+.form-group {
+    margin-bottom: 1em;
+    transition: all .3s;
+}
+
+.form-label {
+    width: 6.6em;
+    font-size: 1.1em;
+    color: #aaa;
+    display: block;
+    opacity: 1;
+    transform: translateY(-2em) translateX(0.5em);
+    transform-origin: 0 0;
+    transition: all .3s;
+    pointer-events: none;
+}
+
+.form-control {
+    box-shadow: none;
+    background: rgba(0,0,0,.01);
+    border-radius: 0px;
+    border-color: #ccc;
+    border-style: none none solid none;
+    transition: all .5s;
+}
+
+    .form-control::placeholder {
+        visibility: hidden;
+    }
+
+.f1:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: var(--color);
+}
+
+.f2:focus {
+    box-shadow: none;
+    outline: none;
+    border-color: #007bff;
+}
+
+.form-control:focus + .form-label, .form-control:not(:placeholder-shown) + .form-label {
+    transform: translateY(-3.9em) scale(.9);
+}
+
+.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em;
+    letter-spacing: 1.7px;
+    font-weight: 600;
+}
+
+textarea {
+    resize: none;
+}
+
+.opt {
+    display: flex;
+    gap: 1em;
+}
+/*Range sider styles*/
+.custom-range{
+    padding-top: 15px;
+    width: 70%;
+
+}
+.sw{
+    display: flex;
+    gap: 1em;
+}
+
+.rangeSlider{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 1em;
+}
+
+@media (max-width: 990px) {
+    .container .c1 {
+        width: 100%;
+    }
+}

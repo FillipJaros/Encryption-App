@@ -1,0 +1,24 @@
+﻿@model EncryptionApp.Models.MorseAlgorithm
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/morseStyle.css" />
+<script src="@Url.Content("~/js/morseJavaScript.js")" rel="text/javascript"></script>
+
+<div class="container c1">
+    <h2 class="display-4 pt-3 text-center">Morse Code Translator</h2><hr><br>
+    <h5 class="text-primary pt-1">Text to Morse</h5>
+    <p class="lead">Type letters and numbers, you can also use some special characters ("." "," "?" "!").</p>
+    <h5 class="text-primary">Morse to Text</h5>
+    <p class="lead">
+        You can type Morse using "." and "-". Letters are separated by spaces and words by "/".
+    </p>
+    <form method="post" asp-action="Index">
+        <input class="form-control f1 mt-5" asp-for="InputString" placeholder="a" tabindex="1" id="inp" onkeyup="Validate()" data-placement="top" data-trigger="manual" data-content="Not valid input." required />
+        <label for="text" class="form-label">Enter Text or Morse</label>
+        <input type="submit" class="btn btn-outline-primary mb-4" value="Translate" id="subButton" />
+        <textarea style="background-color: rgba(0,0,0,.01);" class="form-control f2" placeholder="a" readonly cols="20" rows="8">@ViewBag.Result</textarea>
+    </form>
+</div>
+
+
